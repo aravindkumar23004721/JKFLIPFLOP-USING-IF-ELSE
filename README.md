@@ -1,5 +1,6 @@
 # JKFLIPFLOP-USING-IF-ELSE
-
+# REG NO:21222110004
+# DEVELOPED BY:Aravind kumar SS
 **AIM:** 
 
 To implement  JK flipflop using verilog and validating their functionality using their functional tables
@@ -34,15 +35,62 @@ The maximum possible groupings of adjacent ones are already shown in the figure.
 
 **Procedure**
 
-/* write all the steps invloved */
+1.Go to quartus software.
+
+2.Set new environment.
+
+3.Type the code to implement SR flipflop using verilog and validating their functionality using their functional tables.
+
+4.Run the program.
+
+5.Give inputs in the waveform table.
+
+6.Run the program.
 
 **PROGRAM**
+```
+module jkflipflop(q, qb,j,k,clock,reset);
+    input j,k,clock,reset;
+    output reg q, qb;
+	 
+always @ (posedge (clock))
 
-/* Program for flipflops and verify its truth table in quartus using Verilog programming. Developed by: RegisterNumber:
-*/
+    begin 
+        if (!reset)
+            begin
+               q <= q;
+               qb <=qb;
+            end   
+        
+else
+ //Write logic for JK flipflop using if else statement for four conditions
 
+
+begin
+               if (j == 0 && k == 0)
+                    begin
+                    q <= q;
+                    qb <= qb;
+                    end 
+		else if (j != k)
+                    begin
+                    q <= j;
+                    qb <= k;
+                    end
+               else if (j == 1 && k == 1) 
+                    begin 
+                    q <= ~q; 
+                    qb <= ~qb; 
+                    end 
+            end
+end  
+endmodule
+```
 **RTL LOGIC FOR FLIPFLOPS**
+![image](https://github.com/SusithraB/JKFLIPFLOP-USING-IF-ELSE/assets/146347839/52d9f9f8-d32d-4380-8d75-cc30b07304e7)
 
 **TIMING DIGRAMS FOR FLIP FLOPS**
+![image](https://github.com/SusithraB/JKFLIPFLOP-USING-IF-ELSE/assets/146347839/70b30f37-b4a5-4faf-9d07-ecb5deb18404)
 
 **RESULTS**
+Implementation of JK flipflop using verilog and validating their functionality using their functional tables is executed and the output is verified successfully
